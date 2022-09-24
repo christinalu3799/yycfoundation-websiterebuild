@@ -7,26 +7,39 @@ const Nav = () => {
   return (
     <nav className='fixed flex justify-center items-center px-4 top-0 bg-coral text-white w-screen h-24'>
         
-        <Link to='/' className='w-[80px]'>
-            <img src={Logo} alt='YYC logo' className='object-cover'/>
+        {/* LOGO IN NAV BAR - redirects to home page on click */}
+        <Link to='/' >
+            <div className='h-[80px] w-[80px]'>
+                <img src={Logo} alt='YYC logo' className='object-cover h-full w-full rounded'/>
+            </div>
         </Link>
-        <ul className='hidden md:flex justify-center flex-wrap items-center'>
-            <NavBtn navItem = {'Home'} linkTo={'/'}/>
-            <NavBtn navItem = {'News'} linkTo={'/news'}/>
-            <NavBtn navItem = {'Our Mission'} linkTo={'/mission'}/>
-            <NavBtn navItem = {'Programs'} />
-            <NavBtn navItem = {'Schools'} />
-            <NavBtn navItem = {'Individual Giving'} />
-            <NavBtn navItem = {'Testimonials'} />
-            <NavBtn navItem = {'Founder'} />
-            <NavBtn navItem = {'Board'} />
-            <NavBtn navItem = {'Sponsors'} />
-            <NavBtn navItem = {'Become a Corporate Sponsor'} />
-            <NavBtn navItem = {'Volunteer'} />
-            <NavBtn navItem = {'YYC Donors'} />
+
+        {/* NAV BAR LINKS */}
+        <div className='hidden md:flex flex-col justify-center items-center flex-wrap'>
+
+            <ul className='hidden md:flex items-center'>
+                <NavBtn navItem = {'Home'} linkTo={'/'}/>
+                <NavBtn navItem = {'News'} linkTo={'/news'}/>
+                <NavBtn navItem = {'Our Mission'} linkTo={'/mission'}/>
+                <NavBtn navItem = {'Programs'} />
+                <NavBtn navItem = {'Schools'} />
+                <NavBtn navItem = {'Volunteer'} />
+                <NavBtn navItem = {'Testimonials'} />
+                <NavBtn navItem = {'Individual Giving'} />
+            </ul>
+            <ul className='hidden md:flex items-center'>
+                <NavBtn navItem = {'Founder'} />
+                <NavBtn navItem = {'Board'} />
+                <NavBtn navItem = {'Sponsors'} />
+                <NavBtn navItem = {'Become a Corporate Sponsor'} />
+                <NavBtn navItem = {'YYC Donors'} />
+                <NavBtn navItem = {'Links'} />
+
+            </ul>
+        </div>
+        <button className='bg-white text-[#000000] text-center rounded w-fit'>
             <NavBtn navItem = {'Contact Us'} />
-            <NavBtn navItem = {'Links'} />
-        </ul>
+        </button>
     </nav>
   )
 }
